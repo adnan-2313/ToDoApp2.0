@@ -8,8 +8,8 @@ const loadState = () => {
       return { data: [] };
     }
     return JSON.parse(serializedState);
-  } catch () {
-   
+  } catch (e) {
+    console.warn("Could not load state from local storage", e);
     return { data: [] };
   }
 };

@@ -63,7 +63,7 @@ const TodoApp = () => {
         </div>
         <div className="max-lg:w-[80%] max-md:w-[90%] w-[60%]">
           <h1 className="font-bold text-[22px]">
-            <u>Todo's List</u>
+            <u>Todo List</u>
           </h1>
         </div>
         <div className="mt-5 w-full flex justify-center items-center">
