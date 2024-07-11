@@ -1,8 +1,27 @@
-# React + Vite
+# Todo App with  React ,Redux and Tailwindcss
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple Todo application built with React, Redux, and Tailwindcss. The application allows users to add, update, and remove to-do items. The to-do list is persisted in local storage, so it remains even after the browser is closed or the page is refreshed.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add new to-do items
+- Edit existing to-do items
+- Remove to-do items
+- Persist the to-do list in local storage
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have Node.js and npm installed on your machine. You can download them from [nodejs.org](https://nodejs.org/).
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone git@github.com:adnan-2313/New-ToDoApp-.git
+
+2. npm install
+3. npm run dev
+   
