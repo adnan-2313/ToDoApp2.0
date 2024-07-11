@@ -25,8 +25,9 @@ const TodoApp = () => {
         const newItem = { id: uuidv4(), text: item };
         dispatch(addToDo(newItem));
       }
-      // Clear input after adding/updating
+      
     }
+    setItem("");
   };
 
   const handleDelete = (id) => {
@@ -38,43 +39,42 @@ const TodoApp = () => {
     setEditMode(true);
     setEditId(id);
   };
-
+ 
   const itemList = useSelector((state) => state.ToDo.data);
+  
 
   return (
     <>
-      <div className="mb-[20px] flex flex-col items-center text-blue-950 justify-center w-full">
+      <div className="pb-[20px] flex flex-col items-center bg-[#121212] h-[100vh]  text-white   w-full">
         <div>
-          <h1 className="font-bold text-[40px]">ToDo App</h1>
+          <h1 className="font-bold text-[#03dac6] max-md:text-[25px] max-lg:text-[30px] text-[40px]">ToDo App</h1>
         </div>
-        <div className="max-lg:w-[80%] mb-[20px] max-md:w-[95%] flex justify-between w-[60%] bg-purple-300 rounded-md mt-5 shadow-lg">
+        <div className="max-lg:w-[80%] mb-[20px] max-md:w-[95%] flex justify-between w-[60%] bg-[#1e1e1e] border-black  mt-5 shadow-[0px_-2px_10px_rgba(0,0,0,0.5)]">
           <input
             onChange={handleChange}
             type="text"
+             placeholder="Enter your task"
             value={item}
-            className="w-[90%] p-[5px_20px] bg-transparent outline-none"
+            className="w-[90%] text-white p-[5px_20px] bg-transparent outline-none"
           />
           <button
-            className="h-[50px] flex justify-center items-center text-[40px] max-md:text-[25px] max-md:w-[15%] w-[10%] border-l-2 border-blue-900"
+            className="h-[50px] flex bg-[#03dac6] outline-none border-none justify-center  items-center text-[40px] max-md:text-[25px] max-md:w-[20%] max-lg:w-[15%] w-[10%] rounded-r-md border-blue-900"
             onClick={handleClick}
+            onKeyDown={handleClick}
           >
-            {editMode ? <TiTick /> : <IoMdAdd />}
+            {editMode ? <TiTick /> : <span className="max-md:text-[12px] text-[15px] text-white ">Add ToDo</span>}
           </button>
         </div>
         <div className="max-lg:w-[80%] max-md:w-[90%] w-[60%]">
-          <h1 className="font-bold text-[22px]">
-            <u>Todo List</u>
-          </h1>
+          
         </div>
-        <div className="mt-5 w-full flex justify-center items-center">
-          <div className="max-lg:w-[80%] max-md:w-[95%] flex bg-purple-300 shadow-lg rounded-md p-[20px] justify-center items-center flex-col w-[60%]">
+        <div className="mt-5 w-full flex justify-center items-center ">
+          <div className="max-lg:w-[80%] min-h-[50vh] bg-[#1e1e1e] max-md:w-[95%] flex shadow-[0px_-2px_10px_rgba(0,0,0,0.5)]  p-[20px]  items-center flex-col w-[60%]">
+            {itemList.length === 0 && <span className="my-auto">No data to display</span>}
             {itemList.map((value) => (
               <div key={value.id} className="flex flex-row w-full">
                 <div className="flex justify-center">
-                  <input
-                    className="max-md:w-[16px] w-[20px] text-blue-950 "
-                    type="checkbox"
-                  />
+                  
                 </div>
                 <p
                   className={`flex  flex-row justify-between m-[10px] max-md:text-[15px] text-[18px] border-b-2 w-[100%]`}

@@ -3,6 +3,7 @@ import ToDoReducer from "./ToDoSlice";
 const AppStore = configureStore({
   reducer: {
     ToDo: ToDoReducer,
+   
   },
 });
 
